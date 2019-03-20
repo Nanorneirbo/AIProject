@@ -29,7 +29,6 @@ public class Main {
 		*/
 
 
-
         // while loop controller
         int g = 0;
         //create a board checker
@@ -37,7 +36,8 @@ public class Main {
         int controller = arrays.heuristic(initialBoard);
 
 
-        while (controller !=0&& g<100 ) {
+        while (controller != 0 && g < 100) {
+            controller = arrays.heuristic(initialBoard);
             System.out.println();
             System.out.println("Loop " + g + " size of open list: " + openList.size());
             // find the highest index
@@ -55,13 +55,13 @@ public class Main {
                     arrays.moveRight(rightCheck);
                     arrays.moveDown(downCheck);
 
-                    if((!closedList.contains(rightCheck))&&(!openList.contains(rightCheck))) {
+                    if ((!closedList.contains(rightCheck)) && (!openList.contains(rightCheck))) {
                         openList.add(rightCheck);
                         gList.add(g);
                         heuristicList.add(arrays.heuristic(rightCheck));
                     }
 
-                    if((!closedList.contains(downCheck))&&(!openList.contains(downCheck))) {
+                    if ((!closedList.contains(downCheck)) && (!openList.contains(downCheck))) {
                         openList.add(downCheck);
                         gList.add(g);
                         heuristicList.add(arrays.heuristic(downCheck));
@@ -80,19 +80,19 @@ public class Main {
                     arrays.moveDown(downCheck);
                     arrays.moveLeft(leftCheck);
 
-                    if((!closedList.contains(rightCheck))&&(!openList.contains(rightCheck))) {
+                    if ((!closedList.contains(rightCheck)) && (!openList.contains(rightCheck))) {
                         openList.add(rightCheck);
                         gList.add(g);
                         heuristicList.add(arrays.heuristic(rightCheck));
                     }
 
-                    if((!closedList.contains(downCheck))&&(!openList.contains(downCheck))) {
+                    if ((!closedList.contains(downCheck)) && (!openList.contains(downCheck))) {
                         openList.add(downCheck);
                         gList.add(g);
                         heuristicList.add(arrays.heuristic(downCheck));
                     }
 
-                    if((!closedList.contains(leftCheck))&&(!openList.contains(leftCheck))) {
+                    if ((!closedList.contains(leftCheck)) && (!openList.contains(leftCheck))) {
                         openList.add(leftCheck);
                         gList.add(g);
                         heuristicList.add(arrays.heuristic(leftCheck));
@@ -109,27 +109,18 @@ public class Main {
                     arrays.moveLeft(leftCheck);
                     arrays.moveDown(downCheck);
 
-                    if((!closedList.contains(leftCheck))&&(!openList.contains(leftCheck))) {
+                    if ((!closedList.contains(leftCheck)) && (!openList.contains(leftCheck))) {
                         openList.add(leftCheck);
                         heuristicList.add(arrays.heuristic(leftCheck));
                         gList.add(g);
                     }
 
-                    if((!closedList.contains(downCheck))&&(!openList.contains(downCheck))) {
+                    if ((!closedList.contains(downCheck)) && (!openList.contains(downCheck))) {
                         openList.add(downCheck);
                         gList.add(g);
                         heuristicList.add(arrays.heuristic(downCheck));
                     }
-                    System.out.println("First entry in open list:");
-                    for(i=0;i<9; i++){
-                        System.out.print(openList.get(0)[i] + ",");
-                    }
 
-                    System.out.println();
-                    System.out.println("Second entry in open list:");
-                    for(i=0;i<9; i++){
-                        System.out.print(openList.get(1)[i] + ",");
-                    }
 
                     System.out.println("Case 2");
                     break;
@@ -144,18 +135,18 @@ public class Main {
                     arrays.moveDown(downCheck);
                     arrays.moveUp(upCheck);
 
-                    if((!closedList.contains(downCheck))&&(!openList.contains(downCheck))) {
+                    if ((!closedList.contains(downCheck)) && (!openList.contains(downCheck))) {
                         openList.add(downCheck);
                         heuristicList.add(arrays.heuristic(downCheck));
                         gList.add(g);
                     }
 
-                    if((!closedList.contains(rightCheck))&&(!openList.contains(rightCheck))) {
+                    if ((!closedList.contains(rightCheck)) && (!openList.contains(rightCheck))) {
                         openList.add(rightCheck);
                         heuristicList.add(arrays.heuristic(rightCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(upCheck))&&(!openList.contains(upCheck))) {
+                    if ((!closedList.contains(upCheck)) && (!openList.contains(upCheck))) {
                         openList.add(upCheck);
                         heuristicList.add(arrays.heuristic(upCheck));
                         gList.add(g);
@@ -176,22 +167,22 @@ public class Main {
                     arrays.moveLeft(leftCheck);
                     arrays.moveUp(upCheck);
 
-                    if((!closedList.contains(downCheck))&&(!openList.contains(downCheck))) {
+                    if ((!closedList.contains(downCheck)) && (!openList.contains(downCheck))) {
                         openList.add(downCheck);
                         heuristicList.add(arrays.heuristic(downCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(upCheck))&&(!openList.contains(upCheck))) {
+                    if ((!closedList.contains(upCheck)) && (!openList.contains(upCheck))) {
                         openList.add(upCheck);
                         heuristicList.add(arrays.heuristic(upCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(rightCheck))&&(!openList.contains(rightCheck))) {
+                    if ((!closedList.contains(rightCheck)) && (!openList.contains(rightCheck))) {
                         openList.add(rightCheck);
                         heuristicList.add(arrays.heuristic(rightCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(leftCheck))&&(!openList.contains(leftCheck))) {
+                    if ((!closedList.contains(leftCheck)) && (!openList.contains(leftCheck))) {
                         openList.add(leftCheck);
                         heuristicList.add(arrays.heuristic(leftCheck));
                         gList.add(g);
@@ -210,38 +201,21 @@ public class Main {
                     arrays.moveDown(downCheck);
                     System.out.println("Case 5");
 
-                    if((!closedList.contains(leftCheck))&&(!openList.contains(leftCheck))) {
+                    if ((!closedList.contains(leftCheck)) && (!openList.contains(leftCheck))) {
                         openList.add(leftCheck);
                         heuristicList.add(arrays.heuristic(leftCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(downCheck))&&(!openList.contains(downCheck))) {
+                    if ((!closedList.contains(downCheck)) && (!openList.contains(downCheck))) {
                         openList.add(downCheck);
                         heuristicList.add(arrays.heuristic(downCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(upCheck))&&(!openList.contains(upCheck))) {
+                    if ((!closedList.contains(upCheck)) && (!openList.contains(upCheck))) {
                         openList.add(upCheck);
                         heuristicList.add(arrays.heuristic(upCheck));
                         gList.add(g);
                     }
-                    //see the open list
-                    System.out.println("First entry in open list:");
-                    for(i=0;i<9; i++){
-                        System.out.print(openList.get(0)[i] + ",");
-                    }
-
-                    System.out.println();
-                    System.out.println("Second entry in open list:");
-                    for(i=0;i<9; i++){
-                        System.out.print(openList.get(1)[i] + ",");
-                    }
-                    System.out.println();
-                    System.out.println("Third entry in open list:");
-                    for(i=0;i<9; i++){
-                        System.out.print(openList.get(2)[i] + ",");
-                    }
-
 
                     break;
                 case 6:
@@ -252,12 +226,12 @@ public class Main {
                     arrays.moveUp(upCheck);
                     arrays.moveRight(rightCheck);
 
-                    if((!closedList.contains(upCheck))&&(!openList.contains(upCheck))) {
+                    if ((!closedList.contains(upCheck)) && (!openList.contains(upCheck))) {
                         openList.add(upCheck);
                         heuristicList.add(arrays.heuristic(upCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(rightCheck))&&(!openList.contains(rightCheck))) {
+                    if ((!closedList.contains(rightCheck)) && (!openList.contains(rightCheck))) {
                         openList.add(rightCheck);
                         heuristicList.add(arrays.heuristic(rightCheck));
                         gList.add(g);
@@ -278,17 +252,17 @@ public class Main {
                     arrays.moveRight(rightCheck);
                     arrays.moveLeft(leftCheck);
 
-                    if((!closedList.contains(upCheck))&&(!openList.contains(upCheck))) {
+                    if ((!closedList.contains(upCheck)) && (!openList.contains(upCheck))) {
                         openList.add(upCheck);
                         heuristicList.add(arrays.heuristic(upCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(rightCheck))&&(!openList.contains(rightCheck))) {
+                    if ((!closedList.contains(rightCheck)) && (!openList.contains(rightCheck))) {
                         openList.add(rightCheck);
                         heuristicList.add(arrays.heuristic(rightCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(leftCheck))&&(!openList.contains(leftCheck))) {
+                    if ((!closedList.contains(leftCheck)) && (!openList.contains(leftCheck))) {
                         openList.add(leftCheck);
                         heuristicList.add(arrays.heuristic(leftCheck));
                         gList.add(g);
@@ -304,12 +278,12 @@ public class Main {
                     arrays.moveUp(upCheck);
                     arrays.moveLeft(leftCheck);
 
-                    if((!closedList.contains(leftCheck))&&(!openList.contains(leftCheck))) {
+                    if ((!closedList.contains(leftCheck)) && (!openList.contains(leftCheck))) {
                         openList.add(leftCheck);
                         heuristicList.add(arrays.heuristic(leftCheck));
                         gList.add(g);
                     }
-                    if((!closedList.contains(upCheck))&&(!openList.contains(upCheck))) {
+                    if ((!closedList.contains(upCheck)) && (!openList.contains(upCheck))) {
                         openList.add(upCheck);
                         heuristicList.add(arrays.heuristic(upCheck));
                         gList.add(g);
@@ -320,40 +294,29 @@ public class Main {
             }
             g++;
 
-
-
-           /* //find index of lowest heuristic -- moved this down
-           int ind = arrays.indexNextState(fandgList);
-
-            //set up next board
-            for (i = 0; i < 9; i++) {
-                initialBoard[i] = (openList.get(ind)[i]);
-                //  System.out.print(initialBoard[i] + ",");
-            }
-*/
             System.out.println();
             System.out.print("Glist: ");
             for (i = 0; i < gList.size(); i++) {
 
-                System.out.print(gList.get(i)+", ");
+                System.out.print(gList.get(i) + ", ");
             }
             System.out.println();
             System.out.print("Flist: ");
             for (i = 0; i < gList.size(); i++) {
 
-                System.out.print(heuristicList.get(i)+", ");
+                System.out.print(heuristicList.get(i) + ", ");
             }
 
             //gList.add(arrays.gValue(gList, heuristicList));
 
             System.out.println();
             System.out.print("Combined heuristic : ");
-            for(i=0; i< heuristicList.size(); i++){
-                fandgList.add(gList.get(i)+heuristicList.get(i));
+            for (i = 0; i < heuristicList.size(); i++) {
+                fandgList.add(gList.get(i) + heuristicList.get(i));
                 System.out.print(fandgList.get(i) + ",");
             }
             System.out.println();
-            System.out.println("Lowest Heurisitic : " +arrays.indexNextState(fandgList));
+            System.out.println("Lowest Heurisitic : " + arrays.indexNextState(fandgList));
 
             //find index of lowest heuristic
             int ind = arrays.indexNextState(fandgList);
@@ -361,33 +324,56 @@ public class Main {
             //set up next board
             for (i = 0; i < 9; i++) {
                 initialBoard[i] = (openList.get(ind)[i]);
-                //  System.out.print(initialBoard[i] + ",");
+                //System.out.print(initialBoard[i] + ",");
+            }
+            System.out.println();
+            for (i = 0; i < openList.size(); i++) {
+                System.out.println("Open List element "+ i + " ::: " + openList.get(i)[0] +", " + openList.get(i)[1]+", " + openList.get(i)[2]+", " + openList.get(i)[3]+", "
+                        + openList.get(i)[4]+", " + openList.get(i)[5]+", " + openList.get(i)[6]+", " + openList.get(i)[7]+", " + openList.get(i)[8]);
             }
 
-
+            for (i = 0; i < closedList.size(); i++) {
+                System.out.println("Closed List element "+ i + " ::: " + closedList.get(i)[0] +", " + closedList.get(i)[1]+", " + closedList.get(i)[2]+", " + closedList.get(i)[3]+", "
+                        + closedList.get(i)[4]+", " + closedList.get(i)[5]+", " + closedList.get(i)[6]+", " + closedList.get(i)[7]+", " + closedList.get(i)[8]);
+            }
 
             //make this a remove function and add a closed list.
-            closedList.add(openList.get(arrays.indexNextState(fandgList)));
-            //openList.remove(arrays.indexNextState(fandgList));
-            //heuristicList.remove(arrays.indexNextState(fandgList));
-            //gList.remove(arrays.indexNextState(fandgList));
 
             controller = arrays.heuristic(initialBoard);
-
-            System.out.println();
-            System.out.println("Next State to Check : ");
-            for(i=0; i<9; i++){
-                System.out.print(initialBoard[i] + ",");
+            if (controller == 0) {
+                System.out.println();
+                System.out.println("You found the correct state! After XXX Moves");
             }
+            else{
+                closedList.add(openList.get(arrays.indexNextState(fandgList)));
+                //openList.remove(arrays.indexNextState(fandgList));
+                heuristicList.remove(arrays.indexNextState(fandgList));
+                gList.remove(arrays.indexNextState(fandgList));
+                System.out.println();
+                System.out.println("Next State to Check : ");
+                for (i = 0; i < 9; i++) {
+                    System.out.print(initialBoard[i] + ",");
+                }
+            }
+            openList.remove(arrays.indexNextState(fandgList));
             fandgList.clear();
+
+        }
+        System.out.println();
+        for (i = 0; i < openList.size(); i++) {
+            System.out.println("Open List element "+ i + " ::: " + openList.get(i)[0] +", " + openList.get(i)[1]+", " + openList.get(i)[2]+", " + openList.get(i)[3]+", "
+                    + openList.get(i)[4]+", " + openList.get(i)[5]+", " + openList.get(i)[6]+", " + openList.get(i)[7]+", " + openList.get(i)[8]);
         }
 
-        if(controller == 0){
+        if (controller == 0) {
             System.out.println();
             System.out.println("You found the correct state! After XXX Moves");
         }
 
 
+
+
     }
+
 
 }

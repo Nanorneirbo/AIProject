@@ -3,7 +3,6 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.*;
-
 public class Methods {
     private int[] startingState = new int[9];
     private int[] victoryState = new int[9];
@@ -121,6 +120,16 @@ public class Methods {
         board[index] = board[index+3];
         board[index+3] = 0;
         return board;
+    }
+
+    public String toString(ArrayList openList) {
+        String state = "";
+        int i;
+        for (i = 0; i < openList.size(); i++) {
+            state = state + openList.get(i) + ", ";
+        }
+        return state;
+
     }
 
 
